@@ -36,4 +36,12 @@ public class StringPuzzlesTest {
         Assert.assertFalse(stringPuzzles.isOnlyUniqueCharsNoExtraDataStructures(""));
         Assert.assertFalse(stringPuzzles.isOnlyUniqueCharsNoExtraDataStructures(null));
     }
+
+    @Test
+    public void testCompressionAlgorithm() {
+        Assert.assertEquals("a2b1c5a3", stringPuzzles.compressString("aabcccccaaa"));
+        Assert.assertEquals("abcdefg", stringPuzzles.compressString("abcdefg"));
+        Assert.assertEquals("", stringPuzzles.compressString(""));
+        Assert.assertEquals("", stringPuzzles.compressString(null));
+    }
 }

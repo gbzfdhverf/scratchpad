@@ -55,4 +55,33 @@ public class StringPuzzles {
 
         return true;
     }
+
+    public String compressString(String stringToCompress) {
+        if (stringToCompress == null) {
+            return "";
+        }
+
+        int charCount = 0;
+        char current = '\0';
+        String compressedString = "";
+
+        for (int i = 0; i < stringToCompress.length(); ++i) {
+            if (current != stringToCompress.charAt(i)) {
+                if (charCount > 0) {
+                    compressedString += charCount;
+                }
+                charCount = 1;
+                current = stringToCompress.charAt(i);
+                compressedString += current;
+            } else {
+                ++charCount;
+            }
+        }
+
+        if (stringToCompress.length() > compressedString.length()) {
+            return compressedString + charCount;
+        } else {
+            return stringToCompress;
+        }
+    }
 }

@@ -31,6 +31,7 @@ public class StackTest {
     @Test
     public void testPop() {
         Stack<Integer> stack = getIntegerStack();
+        Assert.assertEquals(3, stack.size());
 
         Assert.assertEquals(8, (Object) stack.pop());
         Assert.assertEquals(2, (Object) stack.pop());
@@ -45,6 +46,7 @@ public class StackTest {
 
         Assert.assertTrue(stack.peek(2));
         Assert.assertFalse(stack.peek(37));
+        Assert.assertEquals(3, stack.size());
     }
 
     private Stack<Integer> getIntegerStack() {

@@ -21,6 +21,11 @@ public class Stack<T> {
     public T pop() {
         T element = elements[pointer - 1];
         elements[--pointer] = null;
+
+        int newElementsArraySize = elements.length / 2;
+        if (pointer < newElementsArraySize) {
+            elements = Arrays.copyOf(elements, newElementsArraySize);
+        }
         return element;
     }
 

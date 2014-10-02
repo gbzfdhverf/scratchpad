@@ -80,3 +80,6 @@ Temporary Items
 Session.vim
 .netrwhist
 *~
+
+# Custom
+private/
